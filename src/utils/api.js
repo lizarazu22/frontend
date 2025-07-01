@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { safeGetItem } from './storage';
 
+// Debug para producción: logear la baseURL cuando se inicializa API
+console.log("Base URL cargada en Axios:", process.env.NEXT_PUBLIC_API_URL);
+
 const API = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
@@ -14,25 +17,21 @@ API.interceptors.request.use((config) => {
   return config;
 });
 
-// Listado de productos de catálogo
 export const fetchProducts = async () => {
   const { data } = await API.get('/catalogo');
   return data;
 };
 
-// Login usuario
 export const loginUser = async (email, password) => {
   const { data } = await API.post('/auth/login', { email, password });
   return data;
 };
 
-// Registro usuario
 export const signupUser = async (nombre, email, password) => {
   const { data } = await API.post('/auth/signup', { nombre, email, password });
   return data;
 };
 
-// Consultar recomendaciones IA
 export const consultarIA = async (solicitud) => {
   const { data } = await API.post('/gpt/buscar', { solicitud });
   return data.sugerencias;
