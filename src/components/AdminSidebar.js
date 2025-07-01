@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from '../styles/adminSidebar.module.css';
+import styles from '../styles/AdminSidebar.module.css';
 
 const AdminSidebar = ({ isOpen, onClose, logs = [] }) => {
   const [desde, setDesde] = useState('');
