@@ -1,0 +1,164 @@
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 240px;
+  height: calc(100% - 70px);
+  background: linear-gradient(180deg, #222, #1c1c1c);
+  color: white;
+  padding: 22px;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+  border-right: 1px solid #333;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.toggleButton {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  z-index: 1001;
+  background: linear-gradient(135deg, #0A66C2, #084d98);
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s ease;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.toggleButton:hover {
+  background: #06386c;
+  transform: translateX(1px);
+}
+
+/* Botón cerrar dentro del sidebar */
+.closeButton {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.closeButton:hover {
+  background: #666;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin: 18px 0 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+}
+
+.filterGroup {
+  margin-bottom: 24px;
+}
+
+.filterGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.filterGroup input[type="number"],
+.filterGroup select {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 5px;
+  border: none;
+  background: #2d2d2d;
+  color: #f1f1f1;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.filterGroup input[type="number"]:hover,
+.filterGroup select:hover {
+  background: #3a3a3a;
+}
+
+/* Scroll personalizado */
+.sidebar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Responsive tablet */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70vw;
+    padding: 20px;
+  }
+
+  .toggleButton {
+    top: 80px;
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+    margin: 16px 0 18px;
+  }
+
+  .filterGroup input[type="number"],
+  .filterGroup select {
+    font-size: 13.5px;
+    padding: 8px 10px;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 85%;
+    height: 100%;
+    top: 0;
+    padding: 16px;
+    border-radius: 0;
+    transform: translateX(-100%);
+  }
+
+  .toggleButton {
+    top: 70px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+  }
+
+  .sidebar h2 {
+    font-size: 17px;
+    margin: 14px 0 16px;
+  }
+
+  .filterGroup {
+    margin-bottom: 20px;
+  }
+
+  .filterGroup input[type="number"],
+  .filterGroup select {
+    font-size: 13px;
+    padding: 7px 9px;
+  }
+}

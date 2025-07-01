@@ -1,0 +1,168 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  font-family: 'Poppins', sans-serif;
+}
+
+.loginForm {
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 340px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.avatar {
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(135deg, var(--primary), #00c6ff);
+  border-radius: 50%;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.loginForm input {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  margin: 14px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.loginForm input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(0, 112, 243, 0.25);
+  outline: none;
+}
+
+.loginButton,
+.registerButton {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 18px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+.loginButton {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.loginButton:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 112, 243, 0.2);
+}
+
+.registerButton {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.registerButton:hover {
+  background-color: #eaeaea;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.forgotLink {
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: var(--danger);
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 📱 Responsive tablet */
+@media (max-width: 768px) {
+  .loginForm {
+    width: 90%;
+    padding: 30px 24px;
+  }
+
+  .avatar {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 22px;
+  }
+
+  .loginForm input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .loginButton,
+  .registerButton {
+    padding: 13px;
+    font-size: 15px;
+  }
+}
+
+/* 📱 Responsive móviles */
+@media (max-width: 480px) {
+  .loginForm {
+    width: 95%;
+    padding: 28px 20px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .loginForm input {
+    padding: 11px 13px;
+    font-size: 14px;
+  }
+
+  .loginButton,
+  .registerButton {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .options {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    text-align: center;
+  }
+}

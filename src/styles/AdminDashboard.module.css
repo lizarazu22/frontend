@@ -1,0 +1,294 @@
+.adminContainer {
+  text-align: center;
+  padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease;
+}
+
+.adminHeading {
+  color: #1e1e1e;
+  margin-bottom: 22px;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.3px;
+}
+
+.inputField {
+  margin: 12px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.uploadButton {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.uploadButton:hover {
+  background: #1e7e34;
+  transform: translateY(-2px);
+}
+
+.gastosTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.gastosTable th,
+.gastosTable td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.gastosTable th {
+  background: #f5f7fa;
+  font-weight: 700;
+  color: #333;
+}
+
+.gastosTable tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+.gastosTable tr:hover {
+  background: #f0f8ff;
+}
+
+.filterGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin: 22px 0 30px;
+}
+
+.filterGroup label {
+  font-weight: 600;
+  color: #333;
+}
+
+.filterGroup input {
+  padding: 9px 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filterGroup button {
+  background: #0070f3;
+  color: white;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.filterGroup button:hover {
+  background: #005bb5;
+}
+
+.formGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.formGroup input {
+  padding: 11px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.formGroup button {
+  background: linear-gradient(135deg, #0070f3, #005bb5);
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.formGroup button:hover {
+  background: #004a99;
+  transform: translateY(-2px);
+}
+
+/* Botón sidebar fijo bien alineado */
+.toggleButton {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  z-index: 2500;
+  padding: 12px 20px;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, left 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.toggleButton:hover {
+  background: #005bb5;
+  transform: translateY(-1px);
+}
+
+/* Card Resumen bonitos */
+.cardResumenGroup {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  animation: fadeIn 0.8s ease;
+}
+
+.cardResumen {
+  background: #f0f8ff;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.cardResumen:hover {
+  transform: translateY(-4px);
+}
+
+.cardResumen h4 {
+  margin: 12px 0 8px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.cardResumen p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0070f3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive móviles */
+@media (max-width: 768px) {
+  .adminContainer {
+    padding: 20px 14px;
+  }
+
+  .adminHeading {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .filterGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterGroup input,
+  .filterGroup button {
+    width: 100%;
+  }
+
+  .formGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .formGroup input,
+  .formGroup button {
+    width: 100%;
+  }
+
+  .gastosTable {
+    display: block;
+    overflow-x: auto;
+    border-radius: 8px;
+  }
+
+  .gastosTable table {
+    min-width: 600px;
+  }
+
+  .cardResumenGroup {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .toggleButton {
+    top: 80px;
+    left: 16px;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* 📱 Extra pequeñas */
+@media (max-width: 480px) {
+  .adminHeading {
+    font-size: 1.5rem;
+  }
+
+  .toggleButton {
+    top: 70px;
+    padding: 9px 14px;
+    font-size: 0.9rem;
+  }
+
+  .formGroup input,
+  .formGroup button,
+  .filterGroup input,
+  .filterGroup button {
+    font-size: 0.95rem;
+    padding: 9px 12px;
+  }
+
+  .cardResumen {
+    padding: 14px;
+  }
+
+  .cardResumen h4 {
+    font-size: 1.05rem;
+  }
+
+  .cardResumen p {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,158 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  padding: 18px 40px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #00cfff;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16.5px;
+  font-weight: 500;
+  padding: 8px 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLinks li a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #00cfff;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.navLinks li a:hover::after,
+.navLinks li a.activeLink::after {
+  width: 100%;
+}
+
+.navLinks li a:hover {
+  color: #00cfff;
+}
+
+.logoutButton {
+  background-color: #f44336;
+  border: none;
+  padding: 9px 16px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: #d32f2f;
+  transform: translateY(-1px);
+}
+
+/* Menú hamburguesa oculto en escritorio */
+.menuButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menuButton span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menuButton.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menuButton.open span:nth-child(2) {
+  opacity: 0;
+}
+.menuButton.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* 📱 Responsive para pantallas medianas */
+@media (max-width: 1024px) {
+  .menuButton {
+    display: flex;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .navLinks.open {
+    display: flex;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    background: #1f1f1f;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+  }
+
+  .logoutButton {
+    width: 90%;
+    align-self: center;
+  }
+}
+
+/* 📱 Ajustes en pantallas pequeñas */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .logoutButton {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .navLinks li a {
+    font-size: 15px;
+  }
+}

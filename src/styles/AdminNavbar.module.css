@@ -1,0 +1,132 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0a66c2, #084c9e);
+  padding: 18px 30px;
+  color: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  animation: fadeSlideDown 0.5s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo::before {
+  content: "📊";
+  font-size: 1.6rem;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navLinks li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.navLinks li a:hover,
+.navLinks li a.active {
+  color: #ffd700;
+}
+
+.navLinks li a:hover::after,
+.navLinks li a.active::after {
+  width: 100%;
+}
+
+.logoutButton {
+  background: linear-gradient(135deg, #ff5252, #ff0000);
+  border: none;
+  padding: 9px 14px;
+  color: white;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoutButton:hover {
+  background: #d80000;
+  transform: translateY(-1px);
+}
+
+.menuToggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive para mobile */
+@media (max-width: 768px) {
+  .navLinks {
+    position: fixed;
+    top: 64px;
+    left: -100%;
+    flex-direction: column;
+    gap: 16px;
+    background: #0a66c2;
+    width: 200px; /* antes 250px */
+    height: calc(100vh - 64px);
+    padding: 16px;
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.18);
+    z-index: 998;
+  }  
+
+  .navLinks.open {
+    left: 0;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .logoutButton {
+    width: 90%;
+    align-self: center;
+  }
+}

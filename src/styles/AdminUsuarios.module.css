@@ -1,0 +1,333 @@
+.adminUsuariosContainer {
+  padding: 30px 20px;
+  max-width: 1350px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+}
+
+.adminUsuariosContainer h1 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #222;
+}
+
+/* Tabla */
+.userTableWrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  animation: fadeIn 0.8s ease;
+  min-width: 600px;
+}
+
+.userTable thead {
+  position: sticky;
+  top: 0;
+  background: #f9fafb;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.userTable th, .userTable td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 0.96rem;
+}
+
+.userTable th {
+  font-weight: 700;
+  color: #333;
+}
+
+.userTable tr:hover {
+  background-color: #f0f8ff;
+  transition: all 0.3s ease;
+}
+
+.userTable button {
+  margin-right: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.userTable button:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.userTable button:first-of-type {
+  background-color: #0070f3;
+  color: white;
+}
+
+.userTable button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Badge de rol */
+.roleBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  animation: glow 2.5s infinite;
+}
+
+.roleAdmin {
+  background: #e0f7fa;
+  color: #0070f3;
+  box-shadow: 0 0 8px rgba(0,112,243,0.25);
+}
+
+.roleCliente {
+  background: #fceee7;
+  color: #f44336;
+  box-shadow: 0 0 8px rgba(244,67,54,0.18);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContenido {
+  background-color: #fff;
+  padding: 26px;
+  border-radius: 14px;
+  width: 440px;
+  max-width: 95%;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  animation: scaleIn 0.4s ease;
+}
+
+.modalContenido h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.modalContenido form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalContenido label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #444;
+}
+
+.modalContenido input,
+.modalContenido select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.modalAcciones {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.modalAcciones button {
+  margin-left: 12px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modalAcciones button:first-of-type {
+  background-color: #0070f3;
+  color: white;
+}
+
+.modalAcciones button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Floating button */
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #00cfff;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.fab:hover {
+  background: #0095ba;
+  transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 8px rgba(0,0,0,0);}
+  50% { box-shadow: 0 0 12px rgba(0,0,0,0.15);}
+  100% { box-shadow: 0 0 8px rgba(0,0,0,0);}
+}
+
+/* 📱 Responsive móviles */
+@media (max-width: 768px) {
+  .adminUsuariosContainer {
+    padding: 24px 14px;
+  }
+
+  .adminUsuariosContainer h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .userTableWrapper {
+    overflow-x: auto;
+  }
+
+  .userTable {
+    min-width: 600px;
+  }
+
+  .userTable th, .userTable td {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .modalContenido {
+    width: 90%;
+    padding: 22px;
+  }
+
+  .modalAcciones {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modalAcciones button {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminUsuariosContainer h1 {
+    font-size: 1.7rem;
+  }
+
+  .modalContenido h2 {
+    font-size: 1.5rem;
+  }
+
+  .fab {
+    padding: 12px 16px;
+    font-size: 14px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filtros input[type="text"],
+.filtros input[type="date"] {
+  padding: 9px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.filtros button {
+  padding: 10px 16px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.filtros button:hover {
+  background-color: #005bb5;
+}
+.editButton {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: #1565c0;
+}
+
+.deleteButton:hover {
+  background-color: #c62828;
+}

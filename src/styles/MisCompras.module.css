@@ -1,0 +1,282 @@
+.container {
+  padding: 60px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f4f6f8 0%, #ffffff 100%);
+  min-height: 80vh;
+  animation: fadeIn 1.2s ease;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 42px;
+  font-weight: 800;
+  color: #222;
+}
+
+.emptyMessage {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #777;
+  margin-top: 50px;
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  color: #bbb;
+  margin-bottom: 12px;
+}
+
+.compraCard {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease;
+}
+
+.compraCard:nth-child(even) {
+  background: #fbfcfd;
+}
+
+.compraCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.compraCard h3 {
+  margin-bottom: 14px;
+  font-size: 20.5px;
+  color: #333;
+  font-weight: 700;
+}
+
+.productList {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0;
+}
+
+.productList li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.08rem;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeItem 0.8s ease;
+}
+
+.productList li:last-child {
+  border-bottom: none;
+}
+
+.total {
+  text-align: right;
+  font-size: 1.25rem;
+  margin-top: 16px;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.estado {
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  position: relative;
+  animation: pulse 1.5s infinite;
+}
+
+.standby {
+  background: #e0f0ff;
+  color: #007bff;
+}
+
+.confirmado {
+  background: #e8f9f0;
+  color: #28a745;
+}
+
+.rechazado {
+  background: #fde7e7;
+  color: #dc3545;
+}
+
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.actionButtons button {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0070f3;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.actionButtons button:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+
+/* Floating CTA */
+.floatingButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00cfff;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 999;
+}
+
+.floatingButton:hover {
+  background: #0095ba;
+  transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeItem {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.08); }
+  70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 50px 15px;
+  }
+
+  .heading {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .compraCard {
+    padding: 20px;
+  }
+
+  .compraCard h3 {
+    font-size: 19px;
+  }
+
+  .productList li {
+    font-size: 1rem;
+  }
+
+  .total {
+    font-size: 1.1rem;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.98rem;
+  }
+
+  .estado {
+    font-size: 0.95rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 26px;
+  }
+
+  .compraCard {
+    padding: 16px;
+  }
+
+  .compraCard h3 {
+    font-size: 17px;
+  }
+
+  .productList li {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.95rem;
+  }
+
+  .total {
+    font-size: 1rem;
+  }
+
+  .floatingButton {
+    padding: 12px 16px;
+    font-size: 14px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .actionButtons button {
+    padding: 11px 16px;
+    font-size: 14px;
+  }
+}
+.verMas {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 0;
+}
+
+.verMas button {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00cfff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.verMas button:hover {
+  background-color: #0095ba;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,138 @@
+.paymentContainer {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeIn 0.7s ease;
+}
+
+.paymentContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1e1e1e;
+}
+
+.paymentMethods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.paymentOption {
+  background: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.paymentOption:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.paymentOption h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.paymentOption img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.cancelButton {
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 2.5rem auto 0;
+  display: block;
+}
+
+.cancelButton:hover {
+  background: #b71c1c;
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .paymentContainer {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .paymentContainer h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .paymentOption {
+    width: 85%;
+    padding: 1.8rem;
+  }
+
+  .paymentOption h2 {
+    font-size: 1.2rem;
+  }
+
+  .cancelButton {
+    padding: 12px 22px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .paymentContainer {
+    padding: 2rem 1rem;
+  }
+
+  .paymentContainer h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .paymentMethods {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .paymentOption {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .paymentOption h2 {
+    font-size: 1.1rem;
+  }
+
+  .cancelButton {
+    padding: 11px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
