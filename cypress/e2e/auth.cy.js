@@ -75,7 +75,7 @@ describe('Autenticación de usuario', () => {
       cy.contains(recoveryEmail).should('be.visible');
   
       // Simular petición exitosa
-      cy.intercept('POST', 'http://localhost:5000/api/reset-password/forgot-password', {
+      cy.intercept('POST', `${Cypress.env('API_URL')}/reset-password/forgot-password`, {
         statusCode: 200,
         body: { message: 'Correo enviado correctamente.' }
       }).as('sendRecoveryEmail');

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import API from '@/utils/api';
 import styles from '../../styles/AdminCatalogo.module.css';
 
 const AdminCatalogo = () => {
@@ -14,7 +14,7 @@ const AdminCatalogo = () => {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/catalogo');
+      const response = await API.get('/catalogo');
       setProductos(response.data);
     } catch (error) {
       console.error('Error al obtener productos:', error);
@@ -27,7 +27,7 @@ const AdminCatalogo = () => {
 
   const handleEliminar = async (productoId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/catalogo/${productoId}`);
+      await API.delete(`/catalogo/${productoId}`);
       setProductos(productos.filter((p) => p._id !== productoId));
     } catch (error) {
       console.error('Error al eliminar producto:', error);
@@ -40,8 +40,7 @@ const AdminCatalogo = () => {
       formData.append('imagenes', file);
     }
     try {
-      await axios.post(
-        `http://localhost:5000/api/catalogo/${productoId}/imagenes`,
+     await API.post(`/catalogo/${productoId}/imagenes`,
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
@@ -60,7 +59,7 @@ const AdminCatalogo = () => {
     imagenes.forEach((file) => formData.append('imagenes', file));
 
     try {
-      await axios.post('http://localhost:5000/api/catalogo', formData, {
+      await API.post('/catalogo', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setNuevoProducto({ nombre: '', precio: '', stock: '' });

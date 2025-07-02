@@ -13,7 +13,7 @@ describe('Visualización de carrito', () => {
       cy.get('[data-testid="signup-submit"]').click();
       cy.url().should('include', '/login');
   
-      cy.request('POST', 'http://localhost:5000/api/auth/login', {
+      cy.request('POST', `${Cypress.env('API_URL')}/auth/login`, {
         email: testEmail,
         password: '123456'
       }).then((res) => {
@@ -62,8 +62,8 @@ describe('Visualización de carrito', () => {
           cy.contains('Agregar al carrito').should('be.visible').click();
         });
   
-      cy.intercept('GET', 'http://localhost:5000/api/carrito').as('getCart');
-  
+        cy.intercept('GET', `${Cypress.env('API_URL')}/carrito`).as('getCart');
+
       // ⚠️ Forzar abrir menú después del alert (que a veces provoca repaint)
       cy.wait(500); // darle un respiro al alert para cerrar y DOM repintar
       ensureMenuOpen();

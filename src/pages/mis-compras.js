@@ -17,7 +17,7 @@ const MisCompras = () => {
       return;
     }
 
-    fetch(`http://localhost:5000/api/ventas/por-usuario/${user._id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/ventas/por-usuario/${user._id}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import API from '@/utils/api';
 import styles from '../../styles/AdminVentas.module.css';
 import AdminNavbar from '../../components/AdminNavbar';
 
@@ -15,7 +15,7 @@ const AdminVentas = () => {
 
   const obtenerTodasLasVentas = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/ventas');
+      const response = await API.get('/ventas');
       setVentas(response.data);
     } catch (error) {
       console.error('Error al obtener todas las ventas:', error);
@@ -24,9 +24,9 @@ const AdminVentas = () => {
 
   const handleBuscarPorFechas = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/ventas/por-fechas', {
+      const response = await API.get('/ventas/por-fechas', {
         params: { desde, hasta },
-      });
+      });      
       setVentas(response.data);
     } catch (error) {
       console.error('Error al obtener ventas por fechas:', error);
@@ -39,7 +39,7 @@ const AdminVentas = () => {
       return;
     }
     try {
-      const response = await axios.get(`http://localhost:5000/api/ventas/por-usuario/${usuarioId}`);
+      const response = await API.get(`/ventas/por-usuario/${usuarioId}`);
       setVentas(response.data);
     } catch (error) {
       console.error('Error al obtener ventas por usuario:', error);

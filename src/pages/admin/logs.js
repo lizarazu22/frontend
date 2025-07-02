@@ -9,7 +9,7 @@ const LogsAdmin = () => {
   useEffect(() => {
     const obtenerLogs = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/logs');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/logs`);
         const data = await res.json();
         setLogs(data);
       } catch (err) {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import API from '@/utils/api';
 import styles from '../../styles/AdminDashboard.module.css';
 import withAuth from '../../middlewares/withAuth';
 import AdminNavbar from '../../components/AdminNavbar';
@@ -22,7 +22,7 @@ const AdminDashboard = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/upload', formData, {
+      const response = await API.post('/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setMessage(response.data.message);

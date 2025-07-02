@@ -13,7 +13,7 @@ export default function Document() {
             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
             font-src 'self' https://fonts.gstatic.com;
             img-src 'self' data:;
-            connect-src 'self' http://localhost:5000 ws:;
+            connect-src 'self' https://backend-r82f.onrender.com ws:;
             frame-src 'none';
             object-src 'none';
             base-uri 'self';

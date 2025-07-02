@@ -17,7 +17,7 @@ const BuscarMaterial = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/gpt/buscar', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/gpt/buscar`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

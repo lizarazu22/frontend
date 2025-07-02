@@ -19,7 +19,7 @@ const ResetPasswordTokenPage = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/reset-password/reset-password/${id}/${token}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reset-password/reset-password/${id}/${token}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password })
