@@ -76,42 +76,6 @@ const SidebarFilters = ({
       </div>
 
       <div className={styles.filterGroup}>
-        <label>
-          <input
-            type="checkbox"
-            name="inStock"
-            checked={filters.inStock || false}
-            onChange={handleChange}
-          />
-          Solo productos en stock
-        </label>
-      </div>
-
-      <div className={styles.filterGroup}>
-        <label>
-          <input
-            type="checkbox"
-            name="enOferta"
-            checked={filters.enOferta || false}
-            onChange={handleChange}
-          />
-          Solo productos en oferta
-        </label>
-      </div>
-
-      <div className={styles.filterGroup}>
-        <label>
-          <input
-            type="checkbox"
-            name="nuevos"
-            checked={filters.nuevos || false}
-            onChange={handleChange}
-          />
-          Solo nuevos ingresos
-        </label>
-      </div>
-
-      <div className={styles.filterGroup}>
         <label htmlFor="ordenarPor">Ordenar por</label>
         <select name="ordenarPor" id="ordenarPor" onChange={handleChange} value={filters.ordenarPor || ''}>
           <option value="">--</option>
