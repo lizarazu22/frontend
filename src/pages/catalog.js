@@ -8,7 +8,7 @@ import { safeGetItem } from '../utils/storage';
 import Image from 'next/image';
 import {
   Box, Grid, Card, CardContent, Typography,
-  Button, TextField, IconButton, Stack, Dialog, DialogTitle, DialogContent
+  Button, TextField, Dialog, DialogTitle, DialogContent, Stack
 } from '@mui/material';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
@@ -156,9 +156,28 @@ const Catalog = () => {
         ))}
       </Grid>
 
-      <SidebarFilters filters={filters} setFilters={setFilters} categorias={categorias} materiales={materiales} colores={colores} densidades={densidades} isOpen={filtersOpen} toggleSidebar={() => setFiltersOpen(!filtersOpen)} />
+      <SidebarFilters
+        filters={filters}
+        setFilters={setFilters}
+        categorias={categorias}
+        materiales={materiales}
+        colores={colores}
+        densidades={densidades}
+        isOpen={filtersOpen}
+        toggleSidebar={() => setFiltersOpen(!filtersOpen)}
+      />
 
-      <AISidebar isOpen={iaSidebarOpen} onClose={() => setIaSidebarOpen(false)} toggleSidebar={() => setIaSidebarOpen(!iaSidebarOpen)} />
+      <AISidebar
+        isOpen={iaSidebarOpen}
+        onClose={() => setIaSidebarOpen(false)}
+        toggleSidebar={() => setIaSidebarOpen(!iaSidebarOpen)}
+        onFiltrarIA={(recomendados) => {
+          const filtradosIA = productosOriginales.filter(p =>
+            recomendados.some(r => r._id === p._id)
+          );
+          setFilteredProducts(filtradosIA);
+        }}
+      />
 
       <Dialog open={descripcionOpen} onClose={cerrarDescripcion}>
         <DialogTitle>📝 Descripción del producto</DialogTitle>
