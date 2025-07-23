@@ -167,17 +167,20 @@ const Catalog = () => {
         toggleSidebar={() => setFiltersOpen(!filtersOpen)}
       />
 
-      <AISidebar
-        isOpen={iaSidebarOpen}
-        onClose={() => setIaSidebarOpen(false)}
-        toggleSidebar={() => setIaSidebarOpen(!iaSidebarOpen)}
-        onFiltrarIA={(recomendados) => {
-          const filtradosIA = productosOriginales.filter(p =>
-            recomendados.some(r => r._id === p._id)
-          );
-          setFilteredProducts(filtradosIA);
-        }}
-      />
+<AISidebar
+  isOpen={iaSidebarOpen}
+  onClose={() => setIaSidebarOpen(false)}
+  toggleSidebar={() => setIaSidebarOpen(!iaSidebarOpen)}
+  onFiltrarIA={(recomendados) => {
+    const nombresIA = recomendados.map(r => r.nombre.toLowerCase());
+    const filtradosIA = productosOriginales.filter(p =>
+      nombresIA.some(nombreIA =>
+        p.nombre.toLowerCase().includes(nombreIA)
+      ) && p.stock > 0
+    );
+    setFilteredProducts(filtradosIA);
+  }}
+/>
 
       <Dialog open={descripcionOpen} onClose={cerrarDescripcion}>
         <DialogTitle>📝 Descripción del producto</DialogTitle>
